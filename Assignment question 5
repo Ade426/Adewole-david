@@ -1,0 +1,22 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        float[] alpha = new float[50];
+
+        for (int i = 0; i < 25; i++)
+        {
+            alpha[i] = (float)Math.Pow(i, 2);
+            alpha[i + 25] = i * 3;
+        }
+
+        for (int j = 0; j < alpha.Length; j++)
+        {
+            Console.Write(alpha[j] + " ");
+            if ((j + 1) % 10 == 0)
+                Console.WriteLine();
+        }
+    }
+} 
