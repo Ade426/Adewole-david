@@ -1,0 +1,52 @@
+using System;
+
+class MatrixAddition
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter the number of rows for both matrices: ");
+        int rows = Convert.ToInt32(Console.ReadLine());
+        
+        Console.WriteLine("Enter the number of columns for both matrices: ");
+        int cols = Convert.ToInt32(Console.ReadLine());
+
+        int[,] matrixA = new int[rows, cols];
+        int[,] matrixB = new int[rows, cols];
+        
+        // Input values for matrix A
+        Console.WriteLine("Enter values for Matrix A:");
+        
+		for (int i=0; i<rows; i++)
+		{
+			for (int j=0; j<cols; j++)
+			{
+				Console.Write($"MatrixA[{i},{j}]: ");
+				matrixA[i,j] = Convert.ToInt32(Console.ReadLine());
+			}
+		}
+
+	    // Input values for matrix B
+	    Console.WriteLine("\nEnter values for Matrix B:");
+
+	    for (int i=0; i<rows; i++)
+	    {
+		    for (int j=0;j<cols;j++)
+		    {
+			    Console.Write($"MatrixB[{i},{j}]: ");
+			    matrixB[i,j] = Convert.ToInt32(Console.ReadLine());
+		    }
+     }
+
+     // Compute addition and display result
+     Console.WriteLine("\nResultant Matrix after Addition:");
+     
+     var resultMatrix=new 	int[rows,cols];
+
+     	for(int x=0;x < rows;x++){
+     		for(int y= 0;y < cols;y++){
+     			resultMatrix[x,y]=matrixA[x,y]+matrixB[x,y];
+     		Console.Write(resultMatrix[x,y]+" ");	
+     	 }
+      	Console.Write(Environment.NewLine + Environment.NewLine);
+   }
+}
